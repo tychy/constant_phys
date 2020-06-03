@@ -20,17 +20,40 @@
 \beq
 E = h \omega
 \eeq
-
+$h = 4.1 \times 10^{-15} eV \cdot s = 6.6 \times 10^{-34} J \cdot s$
 \section{ディラック定数}
+換算プランク定数とも呼ばれる。角速度とエネルギーの関係を与える。
 \beq
 h = 2 \pi \hbar
 \eeq
-$\hbar = 6.5 \times 10^{-16} eV \cdot s$
+$\hbar = 6.5 \times 10^{-16} eV \cdot s = 1.0 \times 10^{-34} J \cdot s$
 \section{歴史的経緯}
 \subsection{黒体放射}
+温度Tの平衡状態において、エネルギー量子$E =nh\nu$を仮定してEの期待値を計算する。
+\begin{align}
+    <E> &= \sum nh\nu exp(- nh\nu) / Z\\
+    \sum exp(- nh\nu \beta) &=  \frac{e^{-h\nu \beta}}{e^{hv \beta} - 1}\\
+    \sum nh\nu exp(- nh\nu\ beta) &= \dder[]{\beta} (\sum exp(-nh\nu \beta)) = \frac{h\nu e^{-h\nu \beta}}{(e^{hv \beta} - 1)^2}\\
+    <E> &= \frac{h\nu}{e^{hv \beta} - 1}
+\end{align}
+黒体放射のデータからのフィッティングでプランク定数を知ることができる。
 \subsection{光電効果および光量子仮説}
 \subsection{ミリカンの実験}
+ミリカンの実験では、光電効果のグラフの傾きからプランク定数を求める。
+\beq
+eV = h\mu - W
+\eeq
+からわかる。（ちなみに光電吸収の散乱断面積の大きさは$Z^5$）
 \subsection{ダイオードで調べる}
+発光ダイオードにおいては禁制帯域が波長によって変化する。
+\beq 
+h \nu = eV
+\eeq
+$\nu = c / \lambda$であるから、
+\beq
+h = eV \times \frac{\lambda}{c}
+\eeq
+ここで、複数の波長に対してLEDが発行し始める閾値を求めてやれば、一つの波長において計算した値より精度良く求められる。
 \section{量子論において}
 $h \sim 0$の極限で古典力学に一致する。
 \subsection{シュレディンガー方程式からハミルトンヤコビ}
