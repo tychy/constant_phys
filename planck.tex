@@ -18,7 +18,7 @@
 \section{プランク定数}
 光子のエネルギーと振動数を特徴づけるパラメーター
 \beq
-E = h \omega
+E = h \nu
 \eeq
 $h = 4.1 \times 10^{-15} eV \cdot s = 6.6 \times 10^{-34} J \cdot s$
 \section{ディラック定数}
@@ -33,9 +33,13 @@ $\hbar = 6.5 \times 10^{-16} eV \cdot s = 1.0 \times 10^{-34} J \cdot s$
 \begin{align}
     <E> &= \sum nh\nu exp(- nh\nu) / Z\\
     \sum exp(- nh\nu \beta) &=  \frac{e^{-h\nu \beta}}{e^{hv \beta} - 1}\\
-    \sum nh\nu exp(- nh\nu\ beta) &= \dder[]{\beta} (\sum exp(-nh\nu \beta)) = \frac{h\nu e^{-h\nu \beta}}{(e^{hv \beta} - 1)^2}\\
+    \sum nh\nu exp(- nh\nu\beta) &= - \dder[]{\beta} (\sum exp(-nh\nu \beta)) = \frac{h\nu e^{-h\nu \beta}}{(e^{hv \beta} - 1)^2}\\
     <E> &= \frac{h\nu}{e^{hv \beta} - 1}
 \end{align}
+当然、
+\beq
+	<E> = - \pder[]{\beta} \ln Z
+\eeq
 黒体放射のデータからのフィッティングでプランク定数を知ることができる。
 \subsection{光電効果および光量子仮説}
 \subsection{ミリカンの実験}
