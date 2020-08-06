@@ -1,0 +1,65 @@
+\documentclass{jsarticle}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{newtxtt}
+\usepackage[utf8]{inputenc}
+\newtheorem{th.}{Statement}
+\newcommand{\pder}[2][]{\frac{\partial#1}{\partial#2}}
+\newcommand{\dder}[2][]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\ppder}[2][]{\frac{\partial^2#1}{{\partial#2}^2}}
+\newcommand{\pikder}[3][]{\frac{\partial^2#1}{{\partial#2 \partial#3}}}
+\newcommand{\pikdergx}[3][]{\frac{\partial^2 g_{#1}}{{\partial x^{#2} \partial x^{#3}}}}
+\newcommand{\pderx}[2][]{\pder[#1]{x^{#2}}}
+\newcommand{\pdergx}[2][]{\pderx[g_{#1}]{#2}}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\hfpt}{\hspace{5pt}}
+\newcommand{\ddfrac}[2]{\frac{{#1}^2}{{#2}^2}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\beql}[1]{\begin{equation}\label{#1}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\eeqp}{\;\;\;.\end{equation}}
+\newcommand{\eeqc}{\;\;\;,\end{equation}}
+\newcommand{\GaT}[3]{\Gamma^{#1}_{#2 #3}}
+\newcommand{\pderGaTx}[4]{\pderx[\GaT{#1}{#2}{#3}]{#4}}
+\newcommand{\Christfinside}[3]{\pdergx[#3 #1]{#2} + \pdergx[#2 #3]{#1} - \pdergx[#1 #2]{#3}}
+\newcommand{\Christf}[4]{\Gamma^{#1}_{#2 #3}=\half g^{#1 #4}(\Christfinside{#2}{#3}{#4})}
+\newcommand{\Ricchiinside}[2]{\pder[\Gamma^l_{#1 #2}]{x^l} - \pder[\Gamma^l_{#1 l}]{x^{#2}} 
+    + \GaT{l}{#1}{#2}\GaT{m}{l}{m} - \GaT{m}{#1}{l}\GaT{l}{#2}{m}}
+\date{\today}
+\author{山田龍}
+\title{ボルツマン定数}
+\begin{document}
+\maketitle
+\section{定義}
+エントロピーと状態数を結ぶボルツマンの定理に置いて、定義される。
+\beq
+    S = k \ln W
+\eeq
+次元はエントロピーの次元、温度をエネルギーと関連付ける。
+$1.3 \times 10^{-23}J/K$である。
+
+\section{測定}
+2019年に単位系が改定され、ボルツマン定数はその数値を指定することで定義されるようになった。
+ケルビンの定義も変更された\cite{undated-iq}。
+ここではそれ以前の定義について触れる。
+\subsection{ブラウン運動によるボルツマン定数の測定}
+1908年にランジュバンが発見した方法。
+運動方程式を書いて、運動エネルギーをエネルギー等分配即で書き換えるとボルツマン定数が導入できるので、ボルツマン定数について解く方法。
+\subsection{シュテファンボルツマン、ウィーン則を使う}
+ウィーン則
+\beq
+    \lambda = \frac{b}{T}, b = \frac{hc}{kx},x = 4.96
+\eeq
+温度が高ければ波長が短くなる。歴史的順序を無視すれば、プランクの輻射公式の微分を考えてピークを計算してやれば良い。
+シュテファンボルツマン則
+\beq
+    I = \epsilon \sigma T^4
+\eeq
+ここで$\epsilon$は放射率とする。黒体放射の度合い。
+これは、光子気体を化学ポテンシャル$0$のボース気体とみなして（BECしない。温度を下げると粒子数が変わる）、
+状態密度、エネルギーを計算すれば良い。最初に分散関係が与えられていれば計算できる。
+
+この２つの法則を使えば$k,h$についての２つの方程式とみなせるので、求められる。
+\bibliographystyle{junsrt}
+\bibliography{cite_const}
+\end{document}
+
